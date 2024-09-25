@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const RoundedButton = ({ onPress, title }) => (
+const ButtonView = ({ onPress, title }) => (
     <>
     
   <TouchableOpacity onPress={onPress} style={styles.button}>
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RoundedButton;
+export default ButtonView;

@@ -1,32 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import ButtonView from './formcomponents/button/buttonView';
-import InputView from './formcomponents/input/inputView';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import Login from './formviews/login/Login';
+import Register from './formviews/register/Register';
 
+
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.container1}>Correo Electronico</Text>
-      <InputView/>
-      <Text style={styles.container1}>Contraseña</Text>
-      <InputView/>
-      <ButtonView></ButtonView>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Login" component={Login} />
+        <Drawer.Screen name="Register" component={Register} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000000',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  container1:{
-    color: 'white',
-    display: 'flex',
-    textAlign: 'left'
-  }
-});
